@@ -8,8 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Test_getPlayerDetails {
 
-    static IGamePlayerManager digitalLibrary;
-
 
     static IGamePlayerManager iGamePlayerManager;
 

@@ -22,7 +22,7 @@ public class Test_updatePlayerScore {
         String playerName = "Jonas";
         iGamePlayerManager.registerPlayer(playerID1,playerName);
 
-        int score = 100;
+        int score = 1;
 
         String notExpectedDetails = iGamePlayerManager.getPlayerDetails(playerID1);
 
