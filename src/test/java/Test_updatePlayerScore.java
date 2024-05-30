@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class Test_updatePlayerScore {
 
@@ -14,28 +15,45 @@ public class Test_updatePlayerScore {
 
     }
     @Test
-    public void updatePlayerScore_PlayerLvlsUps_ReturnVoid(){
+    public void updatePlayerScore_PlayerScoreChanges_ReturnVoid(){
+
         //Arrange
-        String playerID = "1";
+        String playerID1 = "1";
+        String playerName = "Jonas";
+        iGamePlayerManager.registerPlayer(playerID1,playerName);
+
         int score = 100;
-        boolean expectedBoolean = true;
+
+        String notExpectedDetails = iGamePlayerManager.getPlayerDetails(playerID1);
+
         //Assert
-        iGamePlayerManager.updatePlayerScore(playerID,score);
-        boolean actualBoolean = iGamePlayerManager.checkLevelUp(playerID);
+        iGamePlayerManager.updatePlayerScore(playerID1,score);
+        String actualDetails = iGamePlayerManager.getPlayerDetails(playerID1);
+
         //Act
-        assertEquals(expectedBoolean,actualBoolean);
+        assertNotEquals(notExpectedDetails,actualDetails);
     }
+
     @Test
-    public void updatePlayerScore_PlayerDidNotLvlUp_ReturnVoid(){
+    public void updatePlayerScore_PlayerScoreDidNotChange_ReturnVoid(){
+
         //Arrange
-        String playerID = "1";
+        String playerID2 = "2";
+        String playerName = "Jonas";
+        iGamePlayerManager.registerPlayer(playerID2,playerName);
+
         int score = 0;
-        boolean expectedBoolean = false;
+
+        String expectedDetails = iGamePlayerManager.getPlayerDetails(playerID2);
+
         //Assert
-        iGamePlayerManager.updatePlayerScore(playerID,score);
-        boolean actualBoolean = iGamePlayerManager.checkLevelUp(playerID);
+        iGamePlayerManager.updatePlayerScore(playerID2,score);
+        String actualDetails = iGamePlayerManager.getPlayerDetails(playerID2);
+
         //Act
-        assertEquals(expectedBoolean,actualBoolean);
+        assertEquals(expectedDetails,actualDetails);
     }
+
+
 
 }

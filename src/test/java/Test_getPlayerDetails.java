@@ -18,26 +18,33 @@ public class Test_getPlayerDetails {
 
     }
     @Test
-    public void getPlayerDetails_checkIfDetailWithExistingPlayer_returnString(){
+    public void getPlayerDetails_checkDetailWithExistingPlayer_returnString(){
+
         //Arrange
-        String playerID = "1";
-        String expectedDetails = "Jonas";
-        iGamePlayerManager.registerPlayer(playerID,expectedDetails);
+        String playerID1 = "1";
+        String playerName = "Jonas";
+        iGamePlayerManager.registerPlayer(playerID1,playerName);
+
+        String expectedDetails = "ID: 1 * Name: Jonas * Score: 0";
+
         //Assert
-        String actualDetails = iGamePlayerManager.getPlayerDetails(playerID);
+        String actualDetails = iGamePlayerManager.getPlayerDetails(playerID1);
+
         //Act
         assertEquals(expectedDetails,actualDetails);
     }
 
     @Test
-    public void getPlayerDetails_checkIfDetailsWithNotExistingPlayer_returnEmptyString(){
+    public void getPlayerDetails_checkDetailsWithNotExistingPlayer_returnEmptyString(){
+
         //Arrange
-        String playerID1 = "1";
-        String expectedDetails = "Jonas";
-        String playerID2 = "99999";
-        iGamePlayerManager.registerPlayer(playerID1,expectedDetails);
+        String playerID2 = "2";
+
+        String expectedDetails = "";
+
         //Assert
         String actualDetails = iGamePlayerManager.getPlayerDetails(playerID2);
+
         //Act
         assertEquals(expectedDetails,actualDetails);
     }

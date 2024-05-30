@@ -18,28 +18,37 @@ public class Test_registerPlayer {
 
     }
     @Test
-    public void registerPlayer_SuccessfulRegistrationActualPlayer_ReturnVoid(){
+    public void registerPlayer_SuccessfulRegistrationOfAPlayer_ReturnVoid(){
+
         //Arrange
-        String playerID = "1";
-        String expectedDetails = "Jonas";
+        String playerID1 = "1";
+        String playerName = "Jonas";
+
+        String expectedDetails = "ID: 1 * Name: Jonas * Score: 0";
+
         //Assert
-        iGamePlayerManager.registerPlayer(playerID,expectedDetails);
-        String actualDetail = iGamePlayerManager.getPlayerDetails(playerID);
+        iGamePlayerManager.registerPlayer(playerID1,playerName);
+        String actualDetail = iGamePlayerManager.getPlayerDetails(playerID1);
+
         //Act
         assertEquals(expectedDetails,actualDetail);
     }
 
     @Test
-    public void registerPlayer_RegisterNotSuccessful_ReturnVoid(){
+    public void registerPlayer_NotSuccessfulRegistrationOfAPlayer_ReturnVoid(){
+
         //Arrange
-        String playerID = "1";
-        String expectedDetails = "Jonas";
+        String playerID2 = "2";
+        String playerName = "Jonas";
+
         boolean expectedBoolean = false;
+
         //Assert
-        iGamePlayerManager.registerPlayer(playerID,expectedDetails);
-        iGamePlayerManager.registerPlayer(playerID,expectedDetails);
-        iGamePlayerManager.deletePlayer(playerID);
-        boolean actualBoolean = iGamePlayerManager.deletePlayer(playerID);
+        iGamePlayerManager.registerPlayer(playerID2,playerName);
+        iGamePlayerManager.registerPlayer(playerID2,playerName);
+        iGamePlayerManager.deletePlayer(playerID2);
+        boolean actualBoolean = iGamePlayerManager.deletePlayer(playerID2);
+
         //Act
         assertEquals(expectedBoolean,actualBoolean);
     }
