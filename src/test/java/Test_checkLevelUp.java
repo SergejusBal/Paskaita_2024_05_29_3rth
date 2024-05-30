@@ -1,4 +1,5 @@
 import org.example.IGamePlayerManager;
+import org.example.IGamePlayerManagerImp;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,7 @@ public class Test_checkLevelUp {
     @BeforeAll
     public static void paruoštiObjektus() {
 
+        iGamePlayerManager = new IGamePlayerManagerImp();
 
     }
 

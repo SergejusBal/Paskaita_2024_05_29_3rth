@@ -1,4 +1,5 @@
 import org.example.IGamePlayerManager;
+import org.example.IGamePlayerManagerImp;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,8 @@ public class Test_deletePlayer {
 
     @BeforeAll
     public static void paruoštiObjektus() {
+
+        iGamePlayerManager = new IGamePlayerManagerImp();
 
         playerID99 = "99";
         String playerName99 = "ControlCheck";
