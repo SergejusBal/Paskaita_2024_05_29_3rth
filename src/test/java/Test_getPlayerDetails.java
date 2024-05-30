@@ -28,10 +28,10 @@ public class Test_getPlayerDetails {
 
         String expectedDetails = "ID: 1 * Name: Jonas * Score: 0";
 
-        //Assert
+        //Act
         String actualDetails = iGamePlayerManager.getPlayerDetails(playerID1);
 
-        //Act
+        //Assert
         assertEquals(expectedDetails,actualDetails);
     }
 
@@ -43,10 +43,10 @@ public class Test_getPlayerDetails {
 
         String expectedDetails = "";
 
-        //Assert
+        //Act
         String actualDetails = iGamePlayerManager.getPlayerDetails(playerID2);
 
-        //Act
+        //Assert
         assertEquals(expectedDetails,actualDetails);
     }
 

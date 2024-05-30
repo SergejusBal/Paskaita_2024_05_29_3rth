@@ -28,11 +28,11 @@ public class Test_updatePlayerScore {
 
         String notExpectedDetails = iGamePlayerManager.getPlayerDetails(playerID1);
 
-        //Assert
+        //Act
         iGamePlayerManager.updatePlayerScore(playerID1,score);
         String actualDetails = iGamePlayerManager.getPlayerDetails(playerID1);
 
-        //Act
+        //Assert
         assertNotEquals(notExpectedDetails,actualDetails);
     }
 
@@ -48,11 +48,11 @@ public class Test_updatePlayerScore {
 
         String expectedDetails = iGamePlayerManager.getPlayerDetails(playerID2);
 
-        //Assert
+        //Act
         iGamePlayerManager.updatePlayerScore(playerID2,score);
         String actualDetails = iGamePlayerManager.getPlayerDetails(playerID2);
 
-        //Act
+        //Assert
         assertEquals(expectedDetails,actualDetails);
     }
 

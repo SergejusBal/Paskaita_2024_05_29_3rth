@@ -34,10 +34,10 @@ public class Test_deletePlayer {
 
         boolean expectedBoolean = true;
 
-        //Assert
+        //Act
         boolean actualBoolean = iGamePlayerManager.deletePlayer(playerID1);
 
-        //Act
+        //Assert
         assertEquals(expectedBoolean,actualBoolean);
     }
 
@@ -49,10 +49,10 @@ public class Test_deletePlayer {
 
         boolean expectedBoolean = false;
 
-        //Assert
+        //Act
         boolean actualBoolean = iGamePlayerManager.deletePlayer(playerID2);
 
-        //Act
+        //Assert
         assertEquals(expectedBoolean,actualBoolean);
     }
 
@@ -62,10 +62,10 @@ public class Test_deletePlayer {
         //Arrange
         String expectedDetails = "ID: 99 * Name: ControlCheck * Score: 0";
 
-        //Assert
+        //Act
         String actualDetails = iGamePlayerManager.getPlayerDetails(playerID99);
 
-        //Act
+        //Assert
         assertEquals(expectedDetails,actualDetails);
 
     }

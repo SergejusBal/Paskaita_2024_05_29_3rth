@@ -28,11 +28,11 @@ public class Test_registerPlayer {
 
         String expectedDetails = "ID: 1 * Name: Jonas * Score: 0";
 
-        //Assert
+        //Act
         iGamePlayerManager.registerPlayer(playerID1,playerName);
         String actualDetail = iGamePlayerManager.getPlayerDetails(playerID1);
 
-        //Act
+        //Assert
         assertEquals(expectedDetails,actualDetail);
     }
 
@@ -45,13 +45,13 @@ public class Test_registerPlayer {
 
         boolean expectedBoolean = false;
 
-        //Assert
+        //Act
         iGamePlayerManager.registerPlayer(playerID2,playerName);
         iGamePlayerManager.registerPlayer(playerID2,playerName);
         iGamePlayerManager.deletePlayer(playerID2);
         boolean actualBoolean = iGamePlayerManager.deletePlayer(playerID2);
 
-        //Act
+        //Assert
         assertEquals(expectedBoolean,actualBoolean);
     }
 

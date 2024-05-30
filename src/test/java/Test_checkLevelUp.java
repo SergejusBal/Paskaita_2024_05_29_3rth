@@ -29,10 +29,10 @@ public class Test_checkLevelUp {
 
         boolean expectedBoolean = true;
 
-        //Assert
+        //Act
         boolean actualBoolean = iGamePlayerManager.checkLevelUp(playerID);
 
-        //Act
+        //Assert
         assertEquals(expectedBoolean,actualBoolean);
     }
 
@@ -49,10 +49,10 @@ public class Test_checkLevelUp {
 
         boolean expectedBoolean = false;
 
-        //Assert
+        //Act
         boolean actualBoolean = iGamePlayerManager.checkLevelUp(playerID2);
 
-        //Act
+        //Assert
         assertEquals(expectedBoolean,actualBoolean);
     }
 
@@ -64,10 +64,10 @@ public class Test_checkLevelUp {
 
         boolean expectedBoolean = false;
 
-        //Assert
+        //Act
         boolean actualBoolean = iGamePlayerManager.checkLevelUp(playerId99);
 
-        //Act
+        //Assert
         assertEquals(expectedBoolean,actualBoolean);
     }
 
